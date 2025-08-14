@@ -1,5 +1,5 @@
 ===============================================================================================
-|                           BAT Bolt Analysis Input (v0.8.3-ALPHA)                            |
+|                              BAT Bolt Analysis Input (v0.8.4)                               |
 |                                                                                             |
 |                                    bolt analysis test 1                                     |
 ===============================================================================================
@@ -8,7 +8,7 @@
 | Joint MoS type:                                            min                              |
 | Bolt:                                                      H_M8                             |
 | Bolt material:                                            A4-80                             |
-| Torque tolerance of tight. device [Nm]:                 Â±0.40 (3%)                          |
+| Torque tolerance of tight. device [Nm]:                 ±0.40 (3%)                          |
 | Locking mechanism used:                                    yes                              |
 | Loading plane factor - n:                                  0.50                             |
 | Number of shear planes:                                     1                               |
@@ -74,7 +74,7 @@
 |---------------------------------------------------+--------------------+--------------------|
 | Bolt preload after tightening [N]:                |       8554.0       |      18597.3       |
 | MEAN Bolt preload after tightening [N]:           |                 13575.6                 |
-| Preload Scatter / Tightening Factor Alpha_A [-]:  |               2.17 / Â±37.0%             |
+| Preload Scatter / Tightening Factor Alpha_A [-]:  |               2.17 / ±37.0%             |
 | Total preload loss incl. emb. & temp. [N]:        |       -929.9       |        0.0         |
 | Bolt preload at service incl. emb. & temp. [N]:   |       7624.1       |      18597.3       |
 | MEAN Bolt preload at serv. incl. emb. & temp. [N]:|                 13110.7                 |
@@ -107,4 +107,4 @@
 |-------------------------------------------------------------------------+------------+------------+------------+------------|
 |           Minimum MoS against Yield under bolt head / first clamp part: |     -      |     -      |    77%     |     -      |
 ===============================================================================================================================
-BAT Analysis Timestamp: 01-05-2022 18:02:53
+BAT Analysis Timestamp: 14-08-2025 10:35:55

@@ -14,9 +14,11 @@ import src.functions.BoltManager as bm
 import src.functions.exceptions as ex
 import src.bat_qt_gui as bat_qt_gui
 
-__version__ = "0.8.4"
+__version__ = "0.8.4.TRA"
 """
 Change Log:
+v0.8.4.TRA - 08.14.2025
+- GUI now runs by default. CLI can be invoked with --CLI 
 v0.8.4 - 01.05.2022
 - minor Windows bugs corrected (font size, etc.)
 - flange plot window bug corrected 
@@ -119,9 +121,9 @@ def main():
         type=str,
         default= work_dir + "/config/bat.ini",
         help="define config file (default: ./config/bat.ini)")
-    arg_parser.add_argument("--gui",
+    arg_parser.add_argument("--cli",
         action="store_true",
-        help="use BAT GUI")
+        help="use BAT CLI")
     arg_parser.add_argument("--torque_table",
         action="store_true",
         help="generate torque table")
@@ -184,18 +186,7 @@ def main():
         bolts = bm.BoltManager(db_dir)
 
         # use GUI or command-line
-        if args.gui is True:
-            print("BAT GUI initialized...rock it!")
-            app = QtWidgets.QApplication(sys.argv)
-            window = bat_qt_gui.Ui(ui_dir, materials, bolts, inp_dir, __version__,\
-                                    info_pic_path)
-            window.show()
-            sys.exit(app.exec_())
-        elif args.torque_table is True:
-            tb = torque_table.TorqueTable(materials, bolts)
-        elif args.thread_pull_out is True:
-            tpo = thread_pull_out.ThreadPullOut(materials, bolts)
-        else:
+        if args.cli is True:
             # read and process input file
             inp_file = fp.InputFileParser(args.Input, bolts)
             #inp_file.print() # debug
@@ -211,6 +202,17 @@ def main():
             else:
                 print("#\n# ERROR: analysis method not implemented.")
                 logging.error("ERROR: analysis method not implemented.")
+        elif args.torque_table is True:
+            tb = torque_table.TorqueTable(materials, bolts)
+        elif args.thread_pull_out is True:
+            tpo = thread_pull_out.ThreadPullOut(materials, bolts)
+        else:
+            print("BAT GUI initialized...rock it!")
+            app = QtWidgets.QApplication(sys.argv)
+            window = bat_qt_gui.Ui(ui_dir, materials, bolts, inp_dir, __version__,\
+                                    info_pic_path)
+            window.show()
+            sys.exit(app.exec_())
 
     # handle exceptions
     except (ex.Error, ValueError, IndexError, FileNotFoundError, KeyError) as e:
