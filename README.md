@@ -21,15 +21,15 @@ It supports Python 3.0+ and uses pyQT5, matplotlib and numpy.
 - Download or clone the repository `https://github.com/misams/BAT.git`.
 - Run the BAT software with the included test input file `input_test_1.inp`.
 ```shell
-$ python bat_main.py -i input_test_1.inp
+$ python bat_main.py --CLI -i input_test_1.inp
 ```
 - After sucessfully running `bat_main.py` you get the analysis result directly to your terminal and to the output file `output_test.out` or you redefine the output file name.
 ```shell
-$ python bat_main.py -i input_test_1.inp -o output_test_1.out
+$ python bat_main.py --CLI -i input_test_1.inp -o output_test_1.out
 ```
 - To show all available command line options - type the following.
 ```shell
-$ python bat_main.py --help
+$ python bat_main.py --CLI --help
 ```
 
 ## Run BAT with GUI (pyQT5)
@@ -37,7 +37,7 @@ $ python bat_main.py --help
 - Download or clone the repository `https://github.com/misams/BAT.git`.
 - Run the BAT software with the GUI-option.
 ```shell
-$ python bat_main.py --gui
+$ python bat_main.py
 ```
 ![Example Screenshot BAT v0.8](https://github.com/misams/BAT/blob/master/BAT/doc/bat_example.png)
 
@@ -45,6 +45,7 @@ $ python bat_main.py --gui
 
 Release | Date | Info
 --- | --- | ---
+v0.8.4.TRA | 08.14.2025 |- GUI now runs by default. CLI can be invoked with --CLI
 v0.8.4 | 01.05.2022 |- minor Windows bugs corrected (font size, etc.)<br>- flange plot window bug corrected
 v0.8.3 | 01.05.2022 |- merged pull-request #16, @PascaSch<br>- negative entries for delta-T but corrected (fixes #18)<br>- bolt result filter (MOS cut-off filter, GUI only) implemented (fixes #17)
 v0.8.2 | 01.12.2021 |- info buttons added (fixes #10)<br>- execution bug corrected (fixes #13)
